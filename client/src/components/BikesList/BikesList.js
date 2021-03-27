@@ -1,12 +1,15 @@
 import React from 'react'
 import { bicycles } from '../../mockData/bicycles';
 import BikeListItem from '../BikeListItem/BikeListItem';
+import './BikesList.css'
 
 export default function BikesList() {
   return (
-    <div>
+    <>
       list of bikes
-      { bicycles.map(bicycle => <BikeListItem bike={bicycle} key={bicycle.id} />)}
-    </div>
+      <div className="product-list">
+        { bicycles.map(bicycle => <BikeListItem bike={bicycle} key={bicycle.id} />)}
+      </div>
+  </>
   )
 }
