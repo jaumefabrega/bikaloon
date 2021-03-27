@@ -6,7 +6,7 @@ export default function BikesList() {
   return (
     <div>
       list of bikes
-      { bicycles.map(bicycle => <BikeListItem bike={bicycle} />)}
+      { bicycles.map(bicycle => <BikeListItem bike={bicycle} key={bicycle.id} />)}
     </div>
   )
 }
