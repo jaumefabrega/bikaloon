@@ -27,9 +27,7 @@ export const bicycles = [
       {"id": 3, "complementId": 2, "value":"red"},
       {"id": 4, "complementId": 2, "value":"blue"},
     ],
-    "complementCombinationExclusions": [
-      "1-3"
-    ]
+    "complementCombinationExclusions": []
   },
   {
     "id": 3,
@@ -44,7 +42,7 @@ export const bicycles = [
       {"id": 4, "complementId": 2, "value":"blue"},
     ],
     "complementCombinationExclusions": [
-      "1-3"
+      "1-4"
     ]
   }
 ];
