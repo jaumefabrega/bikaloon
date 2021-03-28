@@ -8,7 +8,16 @@ function getAllBikes () {
 }
 
 function getBikeById (bikeId) {
-  const result = bicycles.filter(bike => bike.id === bikeId)[0]
+  const bike = bicycles.filter(bike => bike.id === bikeId)[0];
+
+
+  let bikeComplements = [...new Set(bike.complementOptions.map(item => item.complementId))].map(complementId => complements.filter(el => el.id === complementId)[0]);
+  bikeComplements = bikeComplements.map(complement => {
+    return {...complement, options: bike.complementOptions.filter(option => option.complementId === complement.id)}
+  });
+  bike.complements = bikeComplements; // Array [ {id:1, name:'wheel size', options: []} , {}...] where options: [ {id:1, complementId:1, value:'red'}, {}...]
+
+  const result = bike;
   return new Promise((resolve) => resolve(result)).then(sleeper(200));
 }
 
