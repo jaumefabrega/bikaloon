@@ -24,7 +24,7 @@ export default function BikesDashboard() {
     ? <p>Select a complement</p>
     : (
       <div>
-        <h2>{selectedComplement ? selectedComplement.name : ''} options</h2>
+        <h2>{selectedComplement ? selectedComplement.name : ''} options ({complementOptions.length})</h2>
         <table>
           <thead>
             <tr>
@@ -52,9 +52,6 @@ export default function BikesDashboard() {
 
   return (
     <div>
-      <Link to={'/admin'} >BIKES</Link>
-      <br/>
-      <br/>
       <div style={{display:'flex'}}>
         <div>
             <h2>COMPLEMENTS</h2>

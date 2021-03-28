@@ -14,9 +14,6 @@ export default function BikesDashboard() {
 
   return (
     <div>
-      <Link to={'/admin/complements'} >COMPLEMENTS</Link>
-      <br/>
-      <br/>
       <Link to={'/admin/bike/new'} >ADD NEW BIKE</Link>
         <table>
           <thead>
