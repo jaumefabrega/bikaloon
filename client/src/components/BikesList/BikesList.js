@@ -18,6 +18,6 @@ export default function BikesList() {
       <div className="product-list">
         { bikes.map(bike => <BikeListItem bike={bike} key={bike.id} />)}
       </div>
-  </>
+    </>
   )
 }
