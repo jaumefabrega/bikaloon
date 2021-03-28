@@ -24,9 +24,7 @@ export default function BikeDetail() {
 
   const handleSelectChange = ({target}, complementId) => {
     setSelectedOptions(prevState => {
-      const newState = {...prevState};
-      newState[complementId] = target.value;
-      return newState;
+      return {...prevState, [complementId]: target.value};
     });
   }
 
