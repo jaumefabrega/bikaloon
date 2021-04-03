@@ -26,6 +26,23 @@ function getAllComplements () {
   return new Promise((resolve) => resolve(result)).then(sleeper(200));
 }
 
+function getAllComplementsAndOptions () {
+  const result = complements;
+  for (const complement of result) {
+    complement.options = [];
+  }
+  complementOptions.forEach(option => {
+    for (const complement of complements) {
+      if (complement.id === option.complementId) {
+        complement.options.push(option);
+        break;
+      }
+    }
+  });
+
+  return new Promise((resolve) => resolve(result)).then(sleeper(200));
+}
+
 function getComplementById (complementId) {
   const result = complements.filter(complement => complement.id === complementId)[0]
   return new Promise((resolve) => resolve(result)).then(sleeper(200));
@@ -47,6 +64,7 @@ export default {
   getAllBikes,
   getBikeById,
   getAllComplements,
+  getAllComplementsAndOptions,
   getComplementById,
   getOptionsForComplement
 }
